@@ -1,0 +1,58 @@
+.logo {
+    width: 126px;
+    height: 100px;
+    float: left;
+    cursor: pointer;
+    background: url("images/google-logo.jpg") no-repeat 0 0;
+}
+
+#header {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    float: left;
+    top: 0;
+    clear: right
+}
+
+#main {
+    position: relative;
+    float: left;
+    top: 30px;
+    clear: right;
+    left: 30px;
+    width: 100%;
+}
+
+#footer  {
+    position: relative;
+    float: left;
+    top: 0;
+    clear: right
+}
+
+.leftField {
+    margin: 0em 0em 1em;
+    width: 45%;
+    position: relative;
+    float: left;
+}
+
+.rightField {
+    margin: 0em 0em 1em;
+    width: 45%;
+    position: relative;
+    float: right;
+}
+
+.centerField {
+    margin: 0em 0em 1em;
+    width: 100%;
+    position: relative;
+}
+
+#passwordMessage {
+    clear: both;
+    position: relative;
+    padding-bottom: 10px;
+}
