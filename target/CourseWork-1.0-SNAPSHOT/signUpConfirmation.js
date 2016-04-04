@@ -1,37 +1,38 @@
-/**
- * Created by Voskanyan on 12/28/2015.
- */
-$(document).ready(function() {
-    var password = $("#signUpForm").find('input[name="password"]');
-    var confirmPassword = $("#signUpForm").find('input[name="confirmPassword"]');
-    password.keyup(confirmPasswords);
-    confirmPassword.keyup(confirmPasswords);
+$().ready(function() {
+    $("#signUpForm").validate({
+        rules: {
+            firstName: "required",
+            lastName: "required",
+            login: {
+                required: true,
+                minlength: 6
+            },
+            password: {
+                required: true,
+                minlength: 6
+            },
+            confirmPassword: {
+                required: true,
+                minlength: 6,
+                equalTo: "#password"
+            }
+        },
+        messages: {
+            firstName: "Please enter your first name",
+            lastName: "Please enter your last name",
+            login: {
+                required: "Please enter a username",
+                minlength: "Your username must consist of at least 6 characters"
+            },
+            password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 6 characters long"
+            },
+            confirmPassword: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 6 characters long",
+                equalTo: "Please enter the same password as above"
+            }
+        }
+    });
 });
-
-function confirmPasswords() {
-    var passwordElement = $("#signUpForm").find('input[name="password"]');
-    var confirmPasswordElement = $("#signUpForm").find('input[name="confirmPassword"]');
-    var password = passwordElement.val();
-    var confirmPassword = confirmPasswordElement.val();
-    if(password.length < 6) {
-        passwordElement.css("background-color", "#FFA4A4");
-        $("#passwordMessage").html("Password is too short");
-        $("#signUpForm").find('button').prop('disabled', true);
-    }
-    else {
-        passwordElement.css("background-color", "#FFFFFF");
-        $("#passwordMessage").html("");
-        $("#signUpForm").find('button').prop('disabled', false);
-        if(password != confirmPassword) {
-            confirmPasswordElement.css("background-color", "#FFA4A4");
-            $("#passwordMessage").html("Passwords doesn't match");
-            $("#signUpForm").find('button').prop('disabled', true);
-        }
-        else {
-            confirmPasswordElement.css("background-color", "#FFFFFF");
-            $("#passwordMessage").html("");
-            $("#signUpForm").find('button').prop('disabled', false);
-        }
-    }
-
-}

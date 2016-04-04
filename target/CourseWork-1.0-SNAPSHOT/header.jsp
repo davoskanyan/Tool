@@ -1,61 +1,52 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Voskanyan
+  Date: 4/3/2016
+  Time: 12:34 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<div>
-<div style="float: left">
-    <a class="logo" href="index.jsp"></a>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div id="header" style="float:left">
+    <div class="logo"><img src="images/logo.gif" border="0" alt=""/></div>
 </div>
-<div style="float: left; margin-left: 30px;">
-    <h1>This is not google</h1>
-</div>
-<c:if test="${!empty sessionScope.firstName}">
-    <div style="float: right; margin-right: 30px; top: 60px; position: relative">
-        <div class="ui very relaxed horizontal list">
-            <div class="item">
-                <span>Hello ${sessionScope.firstName} ${sessionScope.lastName}</span>
-            </div>
-            <div class="item">
-                <div class="content">
-                    <a href="signOut">Sign Out</a>
+<div id="hello">
+    <c:if test="${!empty sessionScope.firstName}">
+        <div>
+            <div>
+                <div class="">
+                    <span>Hello ${sessionScope.firstName} ${sessionScope.lastName}</span>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <a href="signOut">Sign Out</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</c:if>
-<c:if test="${empty sessionScope.firstName}">
-    <div style="float: right; margin-right: 30px; top: 60px; position: relative">
-        <div class="ui very relaxed horizontal list">
-            <div class="item">
-                <div class="content">
-                    <a href="signUp.jsp">Sign Up</a>
-                </div>
+    </c:if>
+    <c:if test="${empty sessionScope.firstName}">
+        <div>
+            <div class="header-item">
+                <a class="header-link" href="signUp.jsp">Sign Up</a>
             </div>
-            <div class="item">
-                <div class="content">
-                    <a href="login.jsp">Login</a>
-                </div>
+            <div class="header-item">
+                <a class="header-link" href="login.jsp">Login</a>
             </div>
         </div>
-    </div>
-    </div>
-</c:if>
-<div>
-    <div style="float: left; margin-left: 30px; top: 60px; position: relative">
-        <div class="ui very relaxed horizontal list">
-            <div class="item">
-                <div class="content">
-                    <a href="index.jsp">Home</a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="content">
-                    <a href="test.jsp">Test</a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="content">
-                    <a href="documentation.jsp">Documentation</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    </c:if>
 </div>
+<div class="menu">
+    <ul>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="test.jsp">Test</a></li>
+        <li><a href="documentation.jsp">Documentation</a></li>
+    </ul>
+</div>
+</body>
+</html>

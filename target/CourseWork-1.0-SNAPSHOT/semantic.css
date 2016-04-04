@@ -16149,7 +16149,7 @@ ol.ui.horizontal.list li:before,
         Labels
 ---------------------*/
 
-.ui.form .field > label {
+.ui.form .centerField > label {
   display: block;
   margin: 0em 0em 0.28571429rem 0em;
   color: rgba(0, 0, 0, 0.87);

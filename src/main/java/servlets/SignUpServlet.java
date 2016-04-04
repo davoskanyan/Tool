@@ -33,6 +33,6 @@ public class SignUpServlet  extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("index2.jsp");
     }
 }
